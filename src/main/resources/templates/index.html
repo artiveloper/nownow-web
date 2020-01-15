@@ -6,10 +6,78 @@
 </head>
 
 <body>
-    <nav th:replace="fragments/navbar :: navbar"></nav>
+<nav th:replace="fragments/navbar :: navbar"></nav>
 
-    hihi.
+<section class="pt-5">
+    <div class="container">
+        <div class="row text-center justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="display-3">필요할 때 지금 바로 나우나우 NowNow!</h3>
+            </div>
+        </div>
+        <div class="row row-grid mt-5">
+            <div class="col-md-4">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
+                    <i class="ni ni-html5"></i>
+                </div>
+                <h6 class="font-weight-bold">판매/대여</h6>
+                <p class="description">나우나우는 모든 재화를 공유할 수 있는 공유 거래 플랫폼이며, 중고 물품의 판매와 대여를 모두 포함하고 있습니다.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
+                    <i class="ni ni-html5"></i>
+                </div>
+                <h6 class="font-weight-bold">수익 창출</h6>
+                <p class="description">집에 굴러다니는 쓰지도 않지만 돈주고 산, 혹시 누가 안쓴다고 줘서 언젠가 쓸지도 모른다고 가지고 있던 모든 것으로 투잡하세요.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
+                    <i class="ni ni-html5"></i>
+                </div>
+                <h6 class="font-weight-bold">사기 방지</h6>
+                <p class="description">중고나라에서 사기당해서 속앓이 하신 적 있으신가요? 나우나우는 아는 사람끼리 거래해요. 사기치면 바로 달려가 죽빵은 아니고 말로할 수
+                    있어요.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <div th:replace="fragments/scripts :: scripts"></div>
+<section class="pt-5">
+    <div class="container">
+
+        <div>
+            <h6 class="font-weight-bold">최신 등록글</h6>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <img class="img-fluid rounded shadow-lg" src="https://via.placeholder.com/400/92c952" alt="">
+                <h6 class="mt-3 font-weight-bold">Card title</h6>
+                <p class="font-weight-bold">10,000원</p>
+                <p class="description">김선우</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid rounded shadow-lg" src="https://via.placeholder.com/400/92c952" alt="">
+                <h6 class="mt-3 font-weight-bold">Card title</h6>
+                <p class="font-weight-bold">10,000원</p>
+                <p class="description">김선우</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid rounded shadow-lg" src="https://via.placeholder.com/400/92c952" alt="">
+                <h6 class="mt-3 font-weight-bold">Card title</h6>
+                <p class="font-weight-bold">10,000원</p>
+                <p class="description">김선우</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid rounded shadow-lg" src="https://via.placeholder.com/400/92c952" alt="">
+                <h6 class="mt-3 font-weight-bold">Card title</h6>
+                <p class="font-weight-bold">10,000원</p>
+                <p class="description">김선우</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="fragments/scripts :: scripts"></div>
 </body>
 </html>
