@@ -1,13 +1,11 @@
 server:
   http2:
     enabled: true
+  port: 9090
 
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/nownow?verifyServerCertificate=false&useSSL=false&serverTimezone=Asia/Seoul
-    username: user
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: test
   jpa:
     hibernate:
       ddl-auto: none
@@ -18,6 +16,23 @@ spring:
       hibernate:
         format_sql: true
 
+---
+spring:
+  profiles: real
+  datasource:
+    url: jdbc:mysql://localhost:3306/nownow?verifyServerCertificate=false&useSSL=false&serverTimezone=Asia/Seoul
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/nownow?verifyServerCertificate=false&useSSL=false&serverTimezone=Asia/Seoul
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
 logging:
   level:
     org.hibername.SQL: debug
