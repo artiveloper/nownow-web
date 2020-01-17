@@ -12,7 +12,7 @@ public class PostControllerAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(PostNotFoundException.class)
     public String handleNotFound () {
-        return "redirect:/404";
+        return "error/404";
     }
 
 }

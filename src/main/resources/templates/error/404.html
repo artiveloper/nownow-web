@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header(title='404.ERROR')">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="text-center">
+        <img class="d-block" th:src="@{/images/error/404.svg}"/>
+        <h1 class="py-3 text-center">페이지를 찾을 수 없습니다 :(</h1>
+        <a href="/">
+            <button class="btn btn-primary text-center" type="button" onclick="">홈으로가기</button>
+        </a>
+    </div>
+</div>
+
+<div th:replace="fragments/scripts :: scripts"></div>
+
+</body>
+</html>
