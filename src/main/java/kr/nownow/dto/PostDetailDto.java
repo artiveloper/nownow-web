@@ -30,6 +30,8 @@ public class PostDetailDto {
 
     private int price;
 
+    private String originalPath;
+
     private String imagePath1;
 
     private Status status;
@@ -46,6 +48,7 @@ public class PostDetailDto {
         this.title = post.getTitle();
         this.content = post.getContent();
         this.price = post.getPrice();
+        this.originalPath = post.getImagePath1();
         this.imagePath1 = post.getImagePath1();
         this.status = post.getStatus();
         this.createdDate = post.getCreatedDate();
