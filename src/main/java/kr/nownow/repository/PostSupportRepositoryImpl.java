@@ -26,4 +26,13 @@ public class PostSupportRepositoryImpl extends QuerydslRepositorySupport impleme
                 .fetch();
     }
 
+    @Override
+    public List<Post> findPostByUserId(Long id) {
+        final QPost post = QPost.post;
+        return from(post)
+                .where(post.writer.id.eq(id))
+                .limit(6)
+                .fetch();
+    }
+
 }
