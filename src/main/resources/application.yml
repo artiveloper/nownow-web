@@ -2,6 +2,8 @@ server:
   http2:
     enabled: true
   port: 9090
+  ssl:
+    enabled: true
 
 spring:
   profiles:
