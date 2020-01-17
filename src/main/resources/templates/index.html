@@ -9,31 +9,38 @@
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<section class="pt-5">
-    <div class="container">
-        <div class="row text-center justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="display-3">필요할 때 지금 바로 나우나우 NowNow!</h3>
+<section class="page-header">
+    <div class="page-header-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="text-white display-3">필요할 때 지금 바로 나우나우 NowNow!</h3>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
         <div class="row row-grid mt-5">
             <div class="col-md-4">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
-                    <i class="ni ni-html5"></i>
+                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
                 </div>
                 <h6 class="text-dark">판매/대여</h6>
                 <p class="description">나우나우는 모든 재화를 공유할 수 있는 공유 거래 플랫폼이며, 중고 물품의 판매와 대여를 모두 포함하고 있습니다.</p>
             </div>
             <div class="col-md-4">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
-                    <i class="ni ni-html5"></i>
+                    <i class="fa fa-krw" aria-hidden="true"></i>
                 </div>
                 <h6 class="text-dark">수익 창출</h6>
                 <p class="description">집에 굴러다니는 쓰지도 않지만 돈주고 산, 혹시 누가 안쓴다고 줘서 언젠가 쓸지도 모른다고 가지고 있던 모든 것으로 투잡하세요.</p>
             </div>
             <div class="col-md-4">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
-                    <i class="ni ni-html5"></i>
+                    <i class="fa fa-shield" aria-hidden="true"></i>
                 </div>
                 <h6 class="text-dark">사기 방지</h6>
                 <p class="description">중고나라에서 사기당해서 속앓이 하신 적 있으신가요? 나우나우는 아는 사람끼리 거래해요. 사기치면 바로 달려가 죽빵은 아니고 말로할 수
@@ -53,11 +60,26 @@
         <div class="row mt-3 position-relative">
             <div class="col-md-3 col-6 mb-5 position-relative" th:each="post : ${recentlyPosts}">
                 <img class="img-fluid rounded shadow-lg" th:src="@{${post.getImagePath1()}}" alt="">
-                <h6 class="mt-3 text-dark" th:text="${post.getTitle()}">제목</h6>
-                <a class="text-warning font-weight-bold" th:text="|${post.getPrice()}원|">금액</a>
-                <div class="d-flex flex-row justify-content-between">
+                <h6 class="mt-3 text-dark font-weight-bold"
+                    th:text="${post.getTitle().length() > 20
+                    ? post.getTitle().substring(0, 17) + '...'
+                    : post.getTitle()}">
+                    제목
+                </h6>
+                <a class="font-weight-bold" th:text="|${post.getFormattedPrice()}원|">금액</a>
+
+                <span th:if="${post.getStatus().toString() == 'trading'}"
+                      class="ml-1 badge badge-info">거래중</span>
+
+                <span th:if="${post.getStatus().toString() != 'trading'}"
+                      class="ml-1 badge"
+                      th:classappend="${post.postType == 'sale' ? 'badge-primary' : 'badge-warning'}"
+                      th:text="${post.postType == 'sale' ? '판매' : '대여'}">post type</span>
+
+                <div class="mt-1 d-flex flex-row justify-content-between">
                     <a class="description" th:text="${post.getWriter()}">작성자</a>
-                    <a class="description" th:text="|${#temporals.format(post.getCreatedDate(), 'yy년 MM월 dd일')} 등록|"></a>
+                    <a class="description"
+                       th:text="|${#temporals.format(post.getCreatedDate(), 'yy년 MM월 dd일')} 등록|"></a>
                 </div>
                 <a class="stretched-link" th:href="@{'/posts/' + ${post.id}}"></a>
             </div>

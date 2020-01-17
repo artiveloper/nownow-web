@@ -36,7 +36,7 @@ class PostRepositoryTest {
 
     @Test
     void detail() throws Exception {
-        List<Post> postByUserId = postRepository.findPostByUserId(1L);
+        List<Post> postByUserId = postRepository.findPostByUserId(1L, 1L);
         for (Post post : postByUserId) {
             System.out.println(post.getTitle());
             System.out.println(post.getContent());

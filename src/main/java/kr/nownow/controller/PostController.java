@@ -1,6 +1,5 @@
 package kr.nownow.controller;
 
-import kr.nownow.domain.Post;
 import kr.nownow.dto.PostDetailDto;
 import kr.nownow.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,7 @@ public class PostController {
     public String detail(Model model, @PathVariable Long postId) {
 
         PostDetailDto post = new PostDetailDto(postService.getPost(postId));
-        List<PostDetailDto> postsOfUser = postService.getPostByUserId(post.getWriterId());
+        List<PostDetailDto> postsOfUser = postService.getAnotherPosts(post.getWriterId(), postId);
 
         model.addAttribute("post", post);
         model.addAttribute("postsOfUser", postsOfUser);

@@ -31,8 +31,8 @@ public class PostService {
                 () -> new PostNotFoundException("해당 게시물을 찾을 수 없습니다."));
     }
 
-    public List<PostDetailDto> getPostByUserId(Long userId) {
-        return postRepository.findPostByUserId(userId)
+    public List<PostDetailDto> getAnotherPosts(Long userId, Long postId) {
+        return postRepository.findPostByUserId(userId, postId)
                 .stream()
                 .map(PostDetailDto::new)
                 .collect(Collectors.toList());

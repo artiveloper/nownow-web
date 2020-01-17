@@ -8,6 +8,6 @@ public interface PostSupportRepository {
 
     List<Post> findRecentlyPost(long limit);
 
-    List<Post> findPostByUserId(Long userId);
+    List<Post> findPostByUserId(Long userId, Long PostId);
 
 }

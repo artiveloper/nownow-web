@@ -56,6 +56,12 @@ public class PostDetailDto {
 
     public String getImagePath1() {
         String[] split = this.imagePath1.split("/upload");
-        return split[0] + "/upload/c_scale,h_300,w_300/" + split[1];
+        return split[0] + "/upload/c_scale,h_250,w_300/" + split[1];
     }
+
+    public String getFormattedPrice() {
+        String tempPrice = String.valueOf(this.price);
+        return tempPrice.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
+    }
+
 }
