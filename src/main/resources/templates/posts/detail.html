@@ -11,6 +11,8 @@
 
 <div class="container">
 
+    <div class="divider"></div>
+
     <div class="row mt-5">
         <div class="col-md-8 mx-auto">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -39,11 +41,19 @@
             <h4 class="title text-dark font-weight-bold mt-2" th:text="${post.title}">title</h4>
 
             <div class="d-flex flex-row justify-content-between py-3">
+
                 <div>
                     <a class="text-dark font-weight-bold" th:text="|${post.price}원|">price</a>
-                    <span class="ml-1 badge badge-primary"
+
+                    <span th:if="${post.getStatus().toString() == 'trading'}"
+                          class="ml-1 badge badge-info">거래중</span>
+
+                    <span th:if="${post.getStatus().toString() != 'trading'}"
+                          class="ml-1 badge"
+                          th:classappend="${post.postType == 'sale' ? 'badge-primary' : 'badge-warning'}"
                           th:text="${post.postType == 'sale' ? '판매' : '대여'}">post type</span>
                 </div>
+
                 <div>
                     <a th:text="|${#temporals.format(post.createdDate, 'yy년 MM월 dd일')} 등록|"></a>
                 </div>
@@ -70,6 +80,14 @@
                         <img class="img-fluid rounded shadow-lg" th:src="@{${post.getImagePath1()}}" alt="">
                         <h6 class="mt-3 text-dark" th:text="${post.getTitle()}">제목</h6>
                         <a class="text-warning font-weight-bold" th:text="|${post.getPrice()}원|">금액</a>
+
+                        <span th:if="${post.getStatus().toString() == 'trading'}"
+                              class="ml-1 badge badge-info">거래중</span>
+
+                        <span th:if="${post.getStatus().toString() != 'trading'}"
+                              class="ml-1 badge"
+                              th:classappend="${post.postType == 'sale' ? 'badge-primary' : 'badge-warning'}"
+                              th:text="${post.postType == 'sale' ? '판매' : '대여'}">post type</span>
 
                         <div class="d-flex flex-row justify-content-between">
                             <a class="description" th:text="${post.getWriter()}">작성자</a>

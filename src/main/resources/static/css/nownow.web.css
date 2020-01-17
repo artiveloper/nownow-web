@@ -2,6 +2,10 @@ body {
     font-family: 'Noto Sans KR', sans-serif; !important;
 }
 
+.divider {
+    border-bottom: 1px solid #e9ecef;
+}
+
 .page-header {
     position: relative;
     width: 100%;
@@ -13,8 +17,8 @@ body {
 .page-header-img {
     position: absolute;
     background-size: cover;
-    background-position: 80%;
+    background-position: 50%;
     width: 100%;
     height: 100%;
-    background-image: url(https://demos.creative-tim.com/argon-design-system-pro/assets/img/sections/unsplashs.jpg);
+    background-image: url(/images/main-header.jpg);
 }

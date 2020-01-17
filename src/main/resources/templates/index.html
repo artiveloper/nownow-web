@@ -9,12 +9,12 @@
 
 <nav th:replace="fragments/navbar :: navbar"></nav>
 
-<section class="page-header">
+<section class="flex justify-content-center align-items-center page-header">
     <div class="page-header-img">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <h3 class="text-white display-3">필요할 때 지금 바로 나우나우 NowNow!</h3>
+                    <h3 class="mt-5 text-white display-3">필요할 때 지금 바로 나우나우 NowNow!</h3>
                 </div>
             </div>
         </div>
@@ -28,21 +28,21 @@
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
                     <i class="fa fa-handshake-o" aria-hidden="true"></i>
                 </div>
-                <h6 class="text-dark">판매/대여</h6>
+                <h6 class="text-dark font-weight-bold">판매/대여</h6>
                 <p class="description">나우나우는 모든 재화를 공유할 수 있는 공유 거래 플랫폼이며, 중고 물품의 판매와 대여를 모두 포함하고 있습니다.</p>
             </div>
             <div class="col-md-4">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
                     <i class="fa fa-krw" aria-hidden="true"></i>
                 </div>
-                <h6 class="text-dark">수익 창출</h6>
+                <h6 class="text-dark font-weight-bold">수익 창출</h6>
                 <p class="description">집에 굴러다니는 쓰지도 않지만 돈주고 산, 혹시 누가 안쓴다고 줘서 언젠가 쓸지도 모른다고 가지고 있던 모든 것으로 투잡하세요.</p>
             </div>
             <div class="col-md-4">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white mb-3">
                     <i class="fa fa-shield" aria-hidden="true"></i>
                 </div>
-                <h6 class="text-dark">사기 방지</h6>
+                <h6 class="text-dark font-weight-bold">사기 방지</h6>
                 <p class="description">중고나라에서 사기당해서 속앓이 하신 적 있으신가요? 나우나우는 아는 사람끼리 거래해요. 사기치면 바로 달려가 죽빵은 아니고 말로할 수
                     있어요.</p>
             </div>
@@ -66,7 +66,7 @@
                     : post.getTitle()}">
                     제목
                 </h6>
-                <a class="font-weight-bold" th:text="|${post.getFormattedPrice()}원|">금액</a>
+                <a class="text-darker font-weight-bold" th:text="|${post.getFormattedPrice()}원|">금액</a>
 
                 <span th:if="${post.getStatus().toString() == 'trading'}"
                       class="ml-1 badge badge-info">거래중</span>
