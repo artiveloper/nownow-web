@@ -43,7 +43,7 @@
             <div class="d-flex flex-row justify-content-between py-3">
 
                 <div>
-                    <a class="text-dark font-weight-bold" th:text="|${post.price}원|">price</a>
+                    <a class="text-dark font-weight-bold" th:text="|${post.getFormattedPrice()}원|">price</a>
 
                     <span th:if="${post.getStatus().toString() == 'trading'}"
                           class="ml-1 badge badge-info">거래중</span>
@@ -79,7 +79,7 @@
                     <div class="col-sm-4 mb-5 position-relative" th:each="post : ${postsOfUser}">
                         <img class="img-fluid rounded shadow-lg" th:src="@{${post.getImagePath1()}}" alt="">
                         <h6 class="mt-3 text-dark" th:text="${post.getTitle()}">제목</h6>
-                        <a class="text-warning font-weight-bold" th:text="|${post.getPrice()}원|">금액</a>
+                        <a class="text-warning font-weight-bold" th:text="|${post.getFormattedPrice()}원|">금액</a>
 
                         <span th:if="${post.getStatus().toString() == 'trading'}"
                               class="ml-1 badge badge-info">거래중</span>
