@@ -26,10 +26,10 @@ logging:
   level:
     org.hibername.SQL: debug
 
+
 # 실서비스 환경
 ---
 spring.profiles: app1
 spring.profiles.include: real-db
-
 server:
-  port: 8081
+  port: 8090

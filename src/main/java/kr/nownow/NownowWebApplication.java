@@ -8,7 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class NownowWebApplication {
 
     public static final String CONFIG_LOCATION = "spring.config.location=" +
-            "classpath:application.yml" +
+            "classpath:application.yml," +
             "/home/nownow-web/config/real-application.yml";
 
     public static void main(String[] args) {
