@@ -25,14 +25,6 @@ spring:
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
 
----
-spring:
-  profiles: test
-  datasource:
-    url: jdbc:mysql://localhost:3306/nownow?verifyServerCertificate=false&useSSL=false&serverTimezone=Asia/Seoul
-    username: user
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
 logging:
   level:
     org.hibername.SQL: debug
